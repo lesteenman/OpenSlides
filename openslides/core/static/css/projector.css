@@ -94,6 +94,9 @@ body{
     z-index: 1000;
     background-color: black;
 }
+.fullscreen > * {
+	height: 100%;
+}
 .fullscreen canvas {
     margin: auto;
     display: block !important;
