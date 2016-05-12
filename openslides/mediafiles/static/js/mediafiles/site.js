@@ -174,7 +174,7 @@ angular.module('OpenSlidesApp.mediafiles.site', ['ngFileUpload', 'OpenSlidesApp.
         $scope.getType = function(presentedMediafile) {
             var mediafile = Mediafile.get(presentedMediafile.id);
             return mediafile.is_pdf ? 'pdf' : mediafile.is_image ? 'image' : 'video';
-        }
+        };
 
         $scope.mediafileGoToPage = function (page) {
             var mediafileElement = getCurrentlyPresentedMediafile();
