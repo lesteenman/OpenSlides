@@ -14,7 +14,7 @@
     "angular-gettext": "~2.2.0",
     "angular-loading-bar": "~0.8.0",
     "angular-messages": "~1.4.10",
-    "angular-pdf": "~1.3.0",
+    "angular-pdf": "https://github.com/lesteenman/angularjs-pdf.git#restrictCanvasHeight",
     "angular-sanitize": "~1.4.10",
     "angular-scroll-glue": "~2.0.6",
     "angular-ui-router": "~0.2.17",
