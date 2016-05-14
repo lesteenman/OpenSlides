@@ -118,6 +118,7 @@ def create_builtin_groups_and_admin(**kwargs):
         'core.can_use_chat',
         'mediafiles.can_manage',
         'mediafiles.can_see',
+        'mediafiles.can_see_private',
         'mediafiles.can_upload',
         'motions.can_create',
         'motions.can_manage',
