@@ -19,7 +19,7 @@ angular.module('OpenSlidesApp.motions.site', [
         mainMenuProvider.register({
             'ui_sref': 'motions.motion.list',
             'img_class': 'file-text',
-            'title': gettext('Motions'),
+            'title': gettext('Resolutions'),
             'weight': 300,
             'perm': 'motions.can_see',
         });
@@ -31,7 +31,7 @@ angular.module('OpenSlidesApp.motions.site', [
     'gettext',
     function (SearchProvider, gettext) {
         SearchProvider.register({
-            'verboseName': gettext('Motions'),
+            'verboseName': gettext('Resolutions'),
             'collectionName': 'motions/motion',
             'urlDetailState': 'motions.motion.detail',
             'weight': 300,
@@ -49,7 +49,7 @@ angular.module('OpenSlidesApp.motions.site', [
                 abstract: true,
                 template: "<ui-view/>",
                 data: {
-                    title: gettext('Motions'),
+                    title: gettext('Resolutions'),
                     basePerm: 'motions.can_see',
                 },
             })
@@ -119,7 +119,7 @@ angular.module('OpenSlidesApp.motions.site', [
                 abstract: true,
                 template: '<ui-view/>',
                 data: {
-                    title: gettext('Motion blocks'),
+                    title: gettext('Resolution blocks'),
                 },
             })
             .state('motions.motionBlock.list', {})
@@ -218,7 +218,7 @@ angular.module('OpenSlidesApp.motions.site', [
                         key: 'motion_version_id',
                         type: 'input',
                         templateOptions: {
-                            label: gettextCatalog.getString('Motion')
+                            label: gettextCatalog.getString('Resolution')
                         },
                         hide: true
                     },
@@ -372,7 +372,7 @@ angular.module('OpenSlidesApp.motions.site', [
                     type: 'checkbox',
                     templateOptions: {
                         label: gettextCatalog.getString('Show as agenda item'),
-                        description: gettextCatalog.getString('If deactivated the motion appears as internal item on agenda.')
+                        description: gettextCatalog.getString('If deactivated the resolution appears as internal item on agenda.')
                     },
                     hide: !(operator.hasPerms('motions.can_manage') && operator.hasPerms('agenda.can_manage'))
                 }];
@@ -444,10 +444,10 @@ angular.module('OpenSlidesApp.motions.site', [
                         key: 'motion_block_id',
                         type: 'select-single',
                         templateOptions: {
-                            label: gettextCatalog.getString('Motion block'),
+                            label: gettextCatalog.getString('Resolution block'),
                             options: MotionBlock.getAll(),
                             ngOptions: 'option.id as option.title for option in to.options',
-                            placeholder: gettextCatalog.getString('Select or search a motion block ...')
+                            placeholder: gettextCatalog.getString('Select or search a resolution block ...')
                         },
                         hideExpression: '!model.more'
                     });
@@ -805,7 +805,7 @@ angular.module('OpenSlidesApp.motions.site', [
             {name: 'category.name',
              display_name: gettext('Category')},
             {name: 'motionBlock.title',
-             display_name: gettext('Motion block')},
+             display_name: gettext('Resolution block')},
             {name: 'state.name',
              display_name: gettext('State')},
             {name: 'log_messages[log_messages.length-1].time',
@@ -886,7 +886,7 @@ angular.module('OpenSlidesApp.motions.site', [
 
         // Export as a pdf file
         $scope.pdfExport = function() {
-            var filename = gettextCatalog.getString("Motions") + ".pdf";
+            var filename = gettextCatalog.getString("Resolutions") + ".pdf";
             var image_sources = [];
             $scope.viewChangeRecommendations = {};
             $scope.viewChangeRecommendations.mode = Config.get('motions_recommendation_text_mode').value;
@@ -1941,7 +1941,7 @@ angular.module('OpenSlidesApp.motions.site', [
 .config([
     'gettext',
     function (gettext) {
-        gettext('Motions');
+        gettext('Resolutions');
 
         // subgroup General
         gettext('General');
@@ -1950,7 +1950,7 @@ angular.module('OpenSlidesApp.motions.site', [
         gettext('Numbered per category');
         gettext('Serially numbered');
         gettext('Set it manually');
-        gettext('Motion preamble');
+        gettext('Resolution preamble');
         gettext('The assembly may decide:');
         gettext('Default line numbering');
         /// Line numbering: Outside

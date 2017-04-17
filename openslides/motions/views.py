@@ -136,7 +136,7 @@ class MotionViewSet(ModelViewSet):
         motion = serializer.save(request_user=request.user)
 
         # Write the log message and initiate response.
-        motion.write_log([ugettext_noop('Motion created')], request.user)
+        motion.write_log([ugettext_noop('Resolution created')], request.user)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
@@ -193,7 +193,7 @@ class MotionViewSet(ModelViewSet):
 
         # Write the log message, check removal of supporters and initiate response.
         # TODO: Log if a version was updated.
-        updated_motion.write_log([ugettext_noop('Motion updated')], request.user)
+        updated_motion.write_log([ugettext_noop('Resolution updated')], request.user)
         if (config['motions_remove_supporters'] and updated_motion.state.allow_support and
                 not has_perm(request.user, 'motions.can_manage')):
             updated_motion.supporters.clear()
@@ -264,7 +264,7 @@ class MotionViewSet(ModelViewSet):
                     not motion.is_supporter(request.user)):
                 raise ValidationError({'detail': _('You can not support this motion.')})
             motion.supporters.add(request.user)
-            motion.write_log([ugettext_noop('Motion supported')], request.user)
+            motion.write_log([ugettext_noop('Resolution supported')], request.user)
             message = _('You have supported this motion successfully.')
         else:
             # Unsupport motion.
@@ -272,7 +272,7 @@ class MotionViewSet(ModelViewSet):
             if not motion.state.allow_support or not motion.is_supporter(request.user):
                 raise ValidationError({'detail': _('You can not unsupport this motion.')})
             motion.supporters.remove(request.user)
-            motion.write_log([ugettext_noop('Motion unsupported')], request.user)
+            motion.write_log([ugettext_noop('Resolution unsupported')], request.user)
             message = _('You have unsupported this motion successfully.')
 
         # Initiate response.

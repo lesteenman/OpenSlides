@@ -70,7 +70,7 @@
   <div id="title">
     <h1>{{  motion.agenda_item.getTitle() || motion.getTitle() }}</h1>
     <h2>
-      <translate>Motion</translate> {{ motion.identifier }}
+      <translate>Resolution</translate> {{ motion.identifier }}
       <span ng-if="motion.versions.length > 1" >| Version {{ motion.getVersion().version_number }}</span>
     </h2>
   </div>

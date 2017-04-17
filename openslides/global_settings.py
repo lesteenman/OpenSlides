@@ -55,6 +55,7 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
     ('en', 'English'),
+    ('en-resolution', 'English - Motion to Resolution'),
     ('de', 'Deutsch'),
     ('fr', 'Français'),
     ('es', 'Español'),

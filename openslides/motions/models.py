@@ -184,7 +184,7 @@ class Motion(RESTModelMixin, models.Model):
             ('can_manage', 'Can manage motions'),
         )
         ordering = ('identifier', )
-        verbose_name = ugettext_noop('Motion')
+        verbose_name = ugettext_noop('Resolution')
 
     def __str__(self):
         """

@@ -17,7 +17,7 @@
         tooltip-enable="motion.isProjected().length"
         os-perms="core.can_manage_projector">
         <button type="button" class="btn btn-default btn-sm"
-            title="{{ 'Project motion' | translate }}"
+            title="{{ 'Project resolution' | translate }}"
             ng-click="motion.project(defaultProjectorId, projectionMode.mode)"
             ng-class="{ 'btn-primary': motion.isProjected().length && inArray(motion.isProjected(), defaultProjectorId)}">
           <i class="fa fa-video-camera"></i>
@@ -61,9 +61,9 @@
     </div>
     <h1>{{ motion.agenda_item.getTitle() || motion.getTitle() }}</h1>
     <h2>
-        <translate>Motion</translate> {{ motion.identifier }}
+        <translate>Resolution</translate> {{ motion.identifier }}
         <span ng-if="parent">
-          (<translate>Amendment of motion</translate>
+          (<translate>Amendment of resolution</translate>
           <a ui-sref="motions.motion.detail({id: parent.id})">{{ parent.identifier || parent.getTitle() }}</a>)
         </span>
         <span ng-if="motion.versions.length > 1" >| Version {{ motion.getVersion(version).version_number }}</span>
@@ -104,12 +104,12 @@
             <!-- support button -->
             <button ng-if="motion.isAllowed('support')" ng-click="support()" class="btn btn-default btn-sm">
               <i class="fa fa-heart"></i>
-              <translate>Support motion</translate>
+              <translate>Support resolution</translate>
             </button>
             <!-- unsupport button -->
             <button ng-if="motion.isAllowed('unsupport')" ng-click="unsupport()" class="btn btn-default btn-sm">
               <i class="fa fa-heart-o"></i>
-              <translate>Unsupport motion</translate>
+              <translate>Unsupport resolution</translate>
             </button>
           </div>
           <!-- Amendments -->
@@ -118,7 +118,7 @@
             <h3 translate>Amendments</h3>
             <div ng-repeat="amendment in amendments">
               <a ui-sref="motions.motion.detail({id: amendment.id})">
-                <translate>Motion</translate> {{ amendment.identifier || amendment.getTitle() }}
+                <translate>Resolution</translate> {{ amendment.identifier || amendment.getTitle() }}
               </a>
             </div>
             <button ng-if="motion.isAllowed('can_create_amendment')" ng-click="newAmendment()" class="btn btn-default btn-sm">
@@ -240,11 +240,11 @@
           {{ motion.category.name }}
 
           <!-- Motion block -->
-          <h3 class="heading" os-perms="!motions.can_manage" ng-show="motion.motionBlock" translate>Motion block</h3>
+          <h3 class="heading" os-perms="!motions.can_manage" ng-show="motion.motionBlock" translate>Resolution block</h3>
           <div class="heading" os-perms="motions.can_manage" ng-show="motionBlocks.length > 0">
             <span uib-dropdown>
               <span id="motionBlock-dropdown" class="drop-down-name pointer" uib-dropdown-toggle>
-                <translate>Motion block</translate>
+                <translate>Resolution block</translate>
                 <i class="fa fa-cog"></i>
               </span>
               <ul class="dropdown-menu" aria-labelledby="motionBlock-dropdown">
@@ -293,7 +293,7 @@
           <ol>
             <li ng-controller="MotionPollDetailCtrl" ng-repeat="poll in motion.polls" class="spacer"
                 ng-if="poll.has_votes || operator.hasPerms('motions.can_manage')">
-              <strong translate-comment='ballot of a motion' translate>Vote</strong>
+              <strong translate-comment='ballot of a resolution' translate>Vote</strong>
 
               <!-- Edit poll -->
               <button os-perms="motions.can_manage" ng-click="openPollDialog(poll, $index+1)"
@@ -450,7 +450,7 @@
 
           <div style="text-align: right;" ng-if="motion.state.versioning && (change_recommendations | filter:{motion_version_id:version}:true).length > 0">
             <button class="btn btn-default"
-                    ng-bootbox-confirm="{{ 'Do you want to create a new version of this motion based on this changes?' | translate }}"
+                    ng-bootbox-confirm="{{ 'Do you want to create a new version of this resolution based on this changes?' | translate }}"
                     ng-bootbox-confirm-action="viewChangeRecommendations.newVersionIncludingChanges(motion, version, true)">
               <i class="fa fa-file-text"></i>
               <translate>New version on these changes</translate>
@@ -465,7 +465,7 @@
 
           <div style="text-align: right;" ng-if="motion.state.versioning && (change_recommendations | filter:{motion_version_id:version}:true).length > 0">
             <button class="btn btn-default"
-                    ng-bootbox-confirm="{{ 'Do you want to create a new version of this motion based on this changes?' | translate }}"
+                    ng-bootbox-confirm="{{ 'Do you want to create a new version of this resolution based on this changes?' | translate }}"
                     ng-bootbox-confirm-action="viewChangeRecommendations.newVersionIncludingChanges(motion, version, false)">
               <i class="fa fa-file-text"></i>
               <translate>New version on these changes</translate>

@@ -12,7 +12,7 @@ angular.module('OpenSlidesApp.motions.pdf', ['OpenSlidesApp.core.pdf'])
     'Motion',
     function(gettextCatalog, PDFLayout, Category, Config, Motion) {
     /**
-     * Provides the content as JS objects for Motions in pdfMake context
+     * Provides the content as JS objects for Resolutions in pdfMake context
      * @constructor
      */
 

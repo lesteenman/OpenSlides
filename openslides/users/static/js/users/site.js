@@ -1536,10 +1536,10 @@ angular.module('OpenSlidesApp.users.site', [
         gettext('Can manage files');
         gettext('Can see hidden files');
         // motions
-        gettext('Can see motions');
-        gettext('Can create motions');
-        gettext('Can support motions');
-        gettext('Can manage motions');
+        gettext('Can see resolutions');
+        gettext('Can create resolutions');
+        gettext('Can support resolutions');
+        gettext('Can manage resolutions');
         gettext('Can see and manage comments');
         // users
         gettext('Can see names of users');

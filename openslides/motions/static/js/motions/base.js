@@ -210,8 +210,8 @@ angular.module('OpenSlidesApp.motions', [
         return DS.defineResource({
             name: name,
             useClass: jsDataModel,
-            verboseName: gettext('Motion'),
-            verboseNamePlural: gettext('Motions'),
+            verboseName: gettext('Resolution'),
+            verboseNamePlural: gettext('Resolutions'),
             validate: function (resource, data, callback) {
                 MotionComment.populateFieldsReverse(data);
                 callback(null, data);

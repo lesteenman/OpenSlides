@@ -6,7 +6,7 @@
         <translate>Back to overview</translate>
       </a>
     </div>
-    <h1 translate>Import motions</h1>
+    <h1 translate>Import resolutions</h1>
   </div>
 </div>
 
@@ -99,19 +99,19 @@
     <div class="text-danger">
       <i class="fa fa-exclamation-triangle"></i>
       {{ motionsWillNotBeImported }}
-      <translate>motions will be not imported.</translate>
+      <translate>resolutions will be not imported.</translate>
     </div>
     <div>
       <i class="fa fa-check-circle-o fa-lg"></i>
       {{ motionsWillBeImported }}
-      <translate>motions will be imported.</translate>
+      <translate>resolutions will be imported.</translate>
     </div>
     <div ng-repeat="motion in motionsImported = (motions | filter:{imported:true})"></div>
     <div ng-if="motionsImported.length > 0" class="text-success">
       <hr class="smallhr">
       <i class="fa fa-check-circle fa-lg"></i>
       {{ motionsImported.length }}
-      <translate>motions were successfully imported.</translate>
+      <translate>resolutions were successfully imported.</translate>
       (<translate>Users created</translate>: {{ usersCreated }},
       <translate>Categories created</translate>: {{ categoriesCreated }})
     </div>
@@ -127,7 +127,7 @@
     <div class="spacer">
       <a ng-if="csvimported" ui-sref="motions.motion.list" class="btn btn-default btn-sm">
         <i class="fa fa-angle-double-left fa-lg"></i>
-        <translate>Back to motions overview</translate>
+        <translate>Back to resolutions overview</translate>
       </a>
     </div>
   </div>

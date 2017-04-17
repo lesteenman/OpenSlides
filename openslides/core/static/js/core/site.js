@@ -1005,7 +1005,7 @@ angular.module('OpenSlidesApp.core.site', [
         // For majority method
         angular.forEach(
             _.filter($scope.configGroups, function (configGroup) {
-                return configGroup.name === 'Motions' || configGroup.name === 'Elections';
+                return configGroup.name === 'Resolutions' || configGroup.name === 'Elections';
             }),
             function (configGroup) {
                 var configItem;
